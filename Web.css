@@ -1,0 +1,409 @@
+@charset "UTF-8";
+/*全局样式*/
+*{  margin:0;
+	padding: 0;
+	list-style:none;
+	font-family:'微软雅黑';
+}
+a{
+	text-decoration:none;
+	display: block;
+}
+ul,ol,dl,dt,dd,li{
+	margin:0;padding:0;list-style:none;
+}
+i,em{
+	font-style:normal;
+}
+img{
+	display: block;
+}
+/*整体选项卡滑动部分*/
+#tabBox{
+	width: 156px;
+	height: 39px;
+	position: fixed;
+	bottom:20px;
+	left:50%;
+	margin-left:-78px;
+	z-index: 30;
+}
+li.tab{
+	width: 22px;
+	height: 22px;
+	/*border:solid #ccc 2px;*/
+	border:solid #5971c1 2px;
+
+	border-radius:7px;
+	opacity:0.85;
+	margin:6px;
+	float:left;
+}
+li.tabActive{
+	/*background: #ccc;*/
+	background: #3636d8;
+	/*background: #5971c1;*/
+	opacity:0.85;
+}
+#pageBox{
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+	height: 645px;
+}
+li.page{
+	width:100%;
+	height: 100%;
+	position: absolute;
+	left: 1366px;
+	top: 0;
+	overflow: hidden;
+}
+
+li.pageActive{
+	left:0;
+}
+
+/*banner部分*/
+
+#banner{
+	z-index: -10;
+	width: 100%;
+	height: 100%;
+	margin:0 auto;
+	position:relative;
+	overflow:hidden;
+}
+#banner img{
+	width:100%;
+
+}
+/*naver部分*/
+#title{
+	z-index: 10;
+	width: 100%;
+	height: 50px;
+	position: absolute;
+	left: 0;
+	top: 15px;
+}
+#nav{
+	position:absolute;
+	right: 0;
+	top: 2px;
+	width: 450px;
+	height: 54px;
+	
+}
+#nav ul{
+	width: 460px;
+	height: 50px;
+}
+#nav li{
+	margin:7px 15px;
+	float:left;
+}
+#nav_div{
+	z-index:-5;
+	position: absolute;
+	left: 15px;
+	top: 8px;
+	width: 100px;
+	height: 40px;
+	overflow:hidden;
+	display: none;
+}
+.nav_t{
+	background: #ccc;
+	width: 100px;
+	height: 2px;
+	position: absolute;
+	left: -100px;
+	top: 0;
+}
+.nav_r{
+	width: 2px;
+	height: 40px;
+	background: #ccc;
+	position: absolute;
+	left: 98px;
+	top: -40px;
+}
+.nav_b{
+	background: #ccc;
+	width: 100px;
+	height: 2px;
+	position: absolute;
+	left: 100px;
+	top: 38px;
+}
+.nav_l{
+	width: 2px;
+	height: 40px;
+	background: #ccc;
+	position: absolute;
+	left: 0;
+	top: 40px;
+}
+#nav a{
+	width: 100px;
+	height: 40px;
+	font-size:18px;
+	text-align:center;
+	line-height:40px;
+	color:#ccc;
+}
+#face{
+	width: 100px;
+	height: 100px;
+	border:solid red 1px;
+	position:absolute;
+	left: 650px;
+	top: 200px;
+}
+#person{
+	height: 200px;
+	position: absolute;
+	left: 760px;
+	top: 180px;
+	color:#ffa301;
+	opacity:0;
+	font-size:80px;
+}
+#person_{
+	font-size:30px;
+	color:#ffa301;
+	/*color:#ccc;*/
+	position: absolute;
+	left: 950px;
+	top: 500px;
+	opacity:0;
+}
+/*resume部分*/
+#resume{
+	width:1366px;
+	height:645px;
+	position: relative;
+	left: 0;
+	top: 0;
+	/*background:rgba(204,204,204,0.3) ;*/
+	background:-webkit-linear-gradient(-90deg,#fff,#ccc);
+}
+#resume div.opa{
+	background:rgba(0,0,0,0.4);
+	width: 1366px;
+	height: 645px;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+#resume img{
+	width:1366px;
+
+}
+.resume_tit{
+	color:#464646;
+	height: 100px;
+	width: 1000px;
+	font-size:50px;
+	text-align:center;
+	line-height: 100px;
+	position: absolute;
+	left: 50%;
+	top: 0;
+	margin-left:-500px;
+	border-bottom:solid 2px #ffa301;
+	/*text-shadow:2px 2px 8px #ffa301;*/
+	/*text-shadow:0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ffa301, 0 0 70px #ffa301, */
+	/*0 0 80px #ffa301, 0 0 100px #ffa301, 0 0 150px #ffa301;*/
+}
+#resume ul{
+	font-size:17px;
+	position: absolute;
+	left: 300px;
+	top: 200px;
+}
+#resume  i{
+	color:#ffa301;
+	font-weight: bold;
+	font-size:20px;
+	margin:0 10px;
+}
+#resume  em{
+	/*color:#33d685;*/
+	font-weight: bold;
+	font-size:20px;
+	margin:0 10px;
+	color:#ffa301;
+}
+#resume li{
+	margin:20px;
+	color:#464646;
+}
+#resume ol{
+	position:absolute;
+	left: 600px;
+	top: 200px;
+}
+#resume ul:hover{
+	transform: scale(1.4)
+}
+#resume ol:hover{
+	transform: scale(1.4)
+}
+/*works部分*/
+#works{
+	overflow: hidden;
+	width:1366px;
+	height: 645px;
+	position: relative;
+	left: 0;
+	top: 0;
+	/*background:rgba(204,204,204,0.3);*/
+	background: -webkit-linear-gradient(-45deg,#fff,#000);
+}
+#works p{
+	width: 300px;
+	height: 70px;
+	font-size:50px;
+	color:#464646;
+	text-align:center;
+	line-height:70px;
+	z-index: 30;
+	position: absolute;
+	left: 50%;
+	top: 35px;
+	margin-left:-150px;
+	text-shadow: 2px 2px 0 #ccc,4px 4px 0 #464646;
+}
+#works p:hover{
+	transform: skew(-40deg);
+};
+#works div.opa{
+	/*background:rgba(0,0,0,0.1);*/
+	width: 1366px;
+	height: 645px;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+/*#works img{
+	width:1366px;
+	height: 645px;
+}*/
+#works ul{
+	position:absolute;
+	left: 50%;
+	top: 150px;
+	margin-left:-405px;
+	width:810px;
+	height: 400px;
+	/*border:solid red 1px;*/
+}
+#works li{
+	width: 180px;
+	height: 180px;
+	/*border:solid 1px blue;*/
+	border:solid 1px #464646;
+	float:left;
+	margin:10px 10px;
+	overflow: hidden;
+	position: relative;
+	background-size: 180px 180px;
+}
+#p1{
+	background: url(img/w1.jpg) no-repeat;
+}
+#p2{
+	background: url(img/w2.jpg) no-repeat;
+}
+#p3{
+	background: url(img/w3.jpg) no-repeat;
+}
+#p4{
+	background: url(img/w4.jpg) no-repeat;
+}
+#p5{
+	background: url(img/w5.jpg) no-repeat;
+}
+#works a{
+	width: 180px;
+	height: 180px;
+	position:absolute;
+	left: 180px;
+	top: 0;
+	/*background:rgba(29,163,236,0.6);*/
+	background: rgba(255,163,1,0.5);
+	/*color:#040a86;*/
+	color:#000;
+	font-size:30px;
+	text-align:center;
+	line-height:180px;
+}
+/*contact部分*/
+#contact{
+	position:relative;
+	left: 0;
+	top: 0;
+	width: 1366px;
+	height: 646px;
+	background: #ccc;
+	overflow:hidden;
+}
+#contact div.opa{
+	/*background:rgba(0,0,0,0.6);*/
+	background: rgba(255,163,1,0.3);
+	width: 1366px;
+	height: 645px;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+#contact img{
+	width:1366px;
+	height: 645px;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+#contact ul{
+	width:600px;
+	position: absolute;
+	left: 50%;
+	top: 100px;
+	margin-left:-300px;
+	font-size:40px;
+	text-align:center;
+	color:#464646;
+}
+#contact ul li{
+	margin:30px 0;
+}
+#contact ol{
+	width: 300px;
+	position: absolute;
+	left: 50%;
+	top:250px;
+	margin-left:-150px;
+	font-size:40px;
+	text-align:center;
+	color:#464646;
+}
+#contact ol li{
+	margin:30px 0;
+}
+#clock{
+	width: 400px;
+	height: 500px;
+	border:solid red 1px;
+	
+}
+#clock img{
+	width: 100px;
+	height: 100px;
+
+}
+
+
+
+

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>works</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        #box{
+            width: 540px;
+            margin: 100px auto;
+        }
+        #search{
+            width: 538px;
+            height: 34px;
+            line-height: 34px;
+            border: 1px solid #50b1ff;
+        }
+        #ul1{
+            width: 538px;
+            border: 1px solid #ccc;
+            border-top: 0;
+        }
+        #ul1 li{
+            width: 100%;
+            height: 30px;
+            line-height: 30px;
+        }
+        #ul1 li.active{
+            background: #ccc;
+        }
+        #box1{
+            width: 250px;
+            height: 50px;
+            position: fixed;
+            left: 22%;
+            top: 105px;
+            margin-left:-100px;
+            font-size:25px;
+        }
+    </style>
+    <script src="jsonp.js"></script>
+    <script>
+        window.onload = function () {
+            var oT=document.getElementById('search');
+            var oUl=document.getElementById('ul1');
+
+            var iNow=-1;
+            var oldValue='';
+            oT.onkeyup=function(ev){
+                var oEvent=ev || event;
+                if(oEvent.keyCode==40 || oEvent.keyCode==38)return;
+                if(oEvent.keyCode==13){
+                    window.open('https://www.baidu.com/s?wd='+oT.value);
+                }
+                jsonp({
+                    url: 'https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su',
+                    data: {
+                        wd: oT.value
+                    },
+                    success: function(json){
+                        var arr=json.s;
+                        oUl.innerHTML='';
+                        for(var i=0; i<arr.length; i++){
+                            var oLi=document.createElement('li');
+                            oLi.innerHTML=arr[i];
+                            oUl.appendChild(oLi);
+                        }
+                    }
+                });
+                oldValue=oT.value;
+            };
+            oT.onkeydown=function(ev){
+                var oEvent=ev || event;
+
+                var aLi=oUl.children;
+                if(oEvent.keyCode==38){
+                    iNow--;
+                    if(iNow<-1)iNow=aLi.length-1;
+                    tab(aLi);
+                    return false;
+                }
+                if(oEvent.keyCode==40){
+                    iNow++;
+                    if(iNow>=aLi.length)iNow=-1;
+                    tab(aLi);
+                }
+            };
+            function tab(aLi){
+                for(var i=0; i<aLi.length; i++){
+                    aLi[i].className='';
+                }
+                if(iNow==-1){
+                    oT.value=oldValue;
+                }else{
+                    aLi[iNow].className='active';
+                    oT.value=aLi[iNow].innerHTML;
+                }
+            }
+        };
+    </script>
+</head>
+<body>
+    <div id="box">
+        <input type="text" id="search">
+        <ul id="ul1">
+        </ul>
+    </div>
+    <div id="box1">
+        请输入搜索内容:
+    </div>
+</body>
+</html>
